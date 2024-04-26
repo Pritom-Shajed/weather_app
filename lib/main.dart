@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:weather_app/src/core/initializer/initializer.dart';
 import 'package:weather_app/src/features/home/presentation/bloc/home_bloc.dart';
 import 'package:weather_app/src/features/home/presentation/home_page.dart';
-
 import 'src/core/dependencies/dependencies.dart';
 
 void main() {

@@ -2,8 +2,9 @@ class WeatherData {
   List<Weather>? weather;
   Main? main;
   Sys? sys;
+  String? name;
 
-  WeatherData({this.weather, this.main, this.sys});
+  WeatherData({this.weather, this.main, this.sys, this.name});
 
   WeatherData.fromJson(Map<String, dynamic> json) {
     if (json['weather'] != null) {
@@ -14,6 +15,7 @@ class WeatherData {
     }
     main = json['main'] != null ? Main.fromJson(json['main']) : null;
     sys = json['sys'] != null ? Sys.fromJson(json['sys']) : null;
+    name = json['name'];
   }
 }
 
@@ -35,12 +37,12 @@ class Weather {
 }
 
 class Main {
-  int? temp;
-  int? feelsLike;
-  int? tempMin;
-  int? tempMax;
-  int? pressure;
-  int? humidity;
+  dynamic temp;
+  dynamic feelsLike;
+  dynamic tempMin;
+  dynamic tempMax;
+  dynamic pressure;
+  dynamic humidity;
 
   Main(
       {this.temp,

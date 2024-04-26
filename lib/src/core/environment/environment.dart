@@ -20,4 +20,8 @@ class Environment {
     return dotenv.env['API_KEY'] ?? 'API KEY NOT FOUND';
   }
 
+  static String get iconBaseUrl {
+    return dotenv.env['ICON_BASE_URL'] ?? 'ICON BASE URL NOT FOUND';
+  }
+
 }

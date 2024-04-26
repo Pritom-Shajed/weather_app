@@ -15,8 +15,10 @@ class Dimensions {
   static final double fontSize22 = 22.sp;
   static final double fontSize24 = 24.sp;
   static final double fontSize26 = 26.sp;
-  static final double fontSize28 = 28.sp;
+  static final double fontSize32 = 32.sp;
+  static final double fontSize88 = 88.sp;
 
   //Radius
   static final double radius8 = 8.r;
+  static final double radius16 = 16.r;
 }
