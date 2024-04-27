@@ -36,7 +36,7 @@ class WeatherList {
       });
     }
     dtTxt = json['dt_txt'];
-    forecastTime = DateFormat('h:mm a').format(DateTime.parse(json['dt_txt']));
+    forecastTime = DateFormat('ha').format(DateTime.parse(json['dt_txt']));
   }
 }
 

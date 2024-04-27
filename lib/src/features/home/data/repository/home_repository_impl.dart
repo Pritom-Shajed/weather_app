@@ -22,4 +22,18 @@ class HomeRepositoryImpl extends HomeRepository {
     return response;
   }
 
+  @override
+  Future<Map<String, dynamic>> fetchWeatherByQuery({required String query}) async{
+    var response = await dataSource.fetchWeatherByQuery(query: query);
+
+    return response;
+  }
+
+  @override
+  Future<Map<String, dynamic>> fetchWeatherForecastByQuery({required String query}) async{
+    var response = await dataSource.fetchWeatherForecastByQuery(query: query);
+
+    return response;
+  }
+
 }

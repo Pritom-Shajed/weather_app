@@ -22,9 +22,6 @@ class AppColors {
   static LinearGradient gradientColorCard = LinearGradient(
     begin: Alignment.topCenter,
     end: Alignment.bottomCenter,
-    colors: [
-      AppColors.whiteColor,
-      Colors.transparent
-    ],
+    colors: [Colors.white.withOpacity(0.40), Colors.white.withOpacity(0.10)]
   );
 }

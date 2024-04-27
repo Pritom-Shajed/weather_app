@@ -21,4 +21,5 @@ class Dimensions {
   //Radius
   static final double radius8 = 8.r;
   static final double radius16 = 16.r;
+  static final double radius100 = 100.r;
 }

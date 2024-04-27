@@ -2,6 +2,8 @@ class Message {
   Message._();
 
   /// network error message
+  static const String loading = "Loading, please wait";
+  static const String locationNotFound = "Location not found";
   static const String locationDisabled = "Location services are disabled";
   static const String locationDenied = "Location permissions are denied";
   static const String locationPermanentlyDenied = "Location permissions are permanently denied, we cannot request permissions";

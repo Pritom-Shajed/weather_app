@@ -23,4 +23,20 @@ class HomeDataSourceImpl extends HomeDataSource {
     return response;
   }
 
+  @override
+  Future<Map<String, dynamic>> fetchWeatherByQuery({required String query}) async{
+    dynamic response = await Network.handleResponse(
+        await Network.getRequest(apiEndpoint: Api.getWeatherBySearch(query: query)));
+
+    return response;
+  }
+
+  @override
+  Future<Map<String, dynamic>> fetchWeatherForecastByQuery({required String query}) async{
+    dynamic response = await Network.handleResponse(
+        await Network.getRequest(apiEndpoint: Api.getWeatherForecastBySearch(query: query)));
+
+    return response;
+  }
+
 }
