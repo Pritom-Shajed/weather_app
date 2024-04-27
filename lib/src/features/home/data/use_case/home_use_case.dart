@@ -8,4 +8,8 @@ class HomeUseCase{
   Future<Map<String, dynamic>> fetchWeatherByLatLon ({required String lat, required String lon}) async{
     return await homeRepository.fetchWeatherByLatLon(lat: lat, lon: lon);
   }
+
+  Future<Map<String, dynamic>> fetchWeatherForecast ({required String lat, required String lon}) async{
+    return await homeRepository.fetchWeatherForecast(lat: lat, lon: lon);
+  }
 }

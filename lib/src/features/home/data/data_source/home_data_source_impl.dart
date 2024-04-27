@@ -13,4 +13,14 @@ class HomeDataSourceImpl extends HomeDataSource {
     return response;
   }
 
+  @override
+  Future fetchWeatherForecast({required String lat, required String lon}) async {
+
+
+    dynamic response = await Network.handleResponse(
+        await Network.getRequest(apiEndpoint: Api.getWeatherForcast(lat: lat, lon: lon)));
+
+    return response;
+  }
+
 }

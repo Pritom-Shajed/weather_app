@@ -24,7 +24,7 @@ class AppLoaders {
 
   static Widget pulse ({double? size, Color? color}){
     return SpinKitPulse(
-      color:  color ?? AppColors.primaryColor,
+      color:  color ?? AppColors.whiteColor,
       size: size ?? 30.r,
     );
   }

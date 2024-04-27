@@ -15,4 +15,11 @@ class HomeRepositoryImpl extends HomeRepository {
     return response;
   }
 
+  @override
+  Future<Map<String, dynamic>> fetchWeatherForecast({required String lat, required String lon}) async{
+    var response = await dataSource.fetchWeatherForecast(lat: lat, lon: lon);
+
+    return response;
+  }
+
 }

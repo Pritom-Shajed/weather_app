@@ -6,11 +6,14 @@ class HomeInitial extends HomeState{}
 
 class HomeLoading extends HomeState{}
 
-class HomeLoaded extends HomeState{
+class HomeWeatherLoaded extends HomeState{
   final WeatherData weatherData;
+  final WeatherForecastData weatherForecastData;
 
-  HomeLoaded({required this.weatherData});
+  HomeWeatherLoaded({required this.weatherData, required this.weatherForecastData});
 }
+
+
 
 class HomeError extends HomeState{
   final String msg;

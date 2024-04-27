@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:weather_app/src/features/home/controller/home_controller.dart';
 import 'package:weather_app/src/features/home/data/data_source/home_data_source.dart';
 import 'package:weather_app/src/features/home/data/data_source/home_data_source_impl.dart';
 import 'package:weather_app/src/features/home/data/repository/home_repository_impl.dart';
@@ -11,7 +12,9 @@ final sl = GetIt.instance;
 
 Future<void> init () async{
 
-  /// auth feature
+  // controller
+  sl.registerLazySingleton<HomeController>(() => HomeController());
+
   // bloc
   sl.registerLazySingleton<HomeBloc>(() => HomeBloc(homeUseCase: sl()));
 
