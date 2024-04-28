@@ -9,29 +9,29 @@ class HomeRepositoryImpl extends HomeRepository {
   HomeRepositoryImpl({required this.dataSource});
 
   @override
-  Future<Map<String, dynamic>> fetchWeatherByLatLon({required String lat, required String lon}) async{
-    var response = await dataSource.fetchWeatherByLatLon(lat: lat, lon: lon);
+  Future<Map<String, dynamic>> fetchWeatherByLatLon({required String lat, required String lon, required String units}) async{
+    var response = await dataSource.fetchWeatherByLatLon(lat: lat, lon: lon, units: units);
 
     return response;
   }
 
   @override
-  Future<Map<String, dynamic>> fetchWeatherForecast({required String lat, required String lon}) async{
-    var response = await dataSource.fetchWeatherForecast(lat: lat, lon: lon);
+  Future<Map<String, dynamic>> fetchWeatherForecast({required String lat, required String lon, required String units}) async{
+    var response = await dataSource.fetchWeatherForecast(lat: lat, lon: lon, units: units);
 
     return response;
   }
 
   @override
-  Future<Map<String, dynamic>> fetchWeatherByQuery({required String query}) async{
-    var response = await dataSource.fetchWeatherByQuery(query: query);
+  Future<Map<String, dynamic>> fetchWeatherByQuery({required String query, required String units}) async{
+    var response = await dataSource.fetchWeatherByQuery(query: query, units: units);
 
     return response;
   }
 
   @override
-  Future<Map<String, dynamic>> fetchWeatherForecastByQuery({required String query}) async{
-    var response = await dataSource.fetchWeatherForecastByQuery(query: query);
+  Future<Map<String, dynamic>> fetchWeatherForecastByQuery({required String query, required String units}) async{
+    var response = await dataSource.fetchWeatherForecastByQuery(query: query, units: units);
 
     return response;
   }

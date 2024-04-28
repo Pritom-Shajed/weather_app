@@ -1,5 +1,5 @@
 import 'package:geolocator/geolocator.dart';
-import 'package:weather_app/src/utils/strings.dart';
+import 'package:weather_app/src/utils/styles/strings.dart';
 
 class HomeController {
 

@@ -4,10 +4,10 @@ import 'package:weather_app/src/components/global_widgets/icon/network_icon.dart
 import 'package:weather_app/src/components/global_widgets/icon/svg_icon.dart';
 import 'package:weather_app/src/components/global_widgets/text/app_texts.dart';
 import 'package:weather_app/src/core/environment/environment.dart';
-import 'package:weather_app/src/utils/colors.dart';
+import 'package:weather_app/src/utils/styles/colors.dart';
 import 'package:weather_app/src/utils/const/time_formatter/time_formatter.dart';
-import 'package:weather_app/src/utils/dimensions.dart';
-import 'package:weather_app/src/utils/icons.dart';
+import 'package:weather_app/src/utils/styles/dimensions.dart';
+import 'package:weather_app/src/utils/styles/icons.dart';
 
 class HomeWidgets {
   HomeWidgets._();

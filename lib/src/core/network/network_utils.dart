@@ -1,9 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
-import 'package:weather_app/src/core/environment/environment.dart';
 import 'package:weather_app/src/core/helper/helper.dart';
-import 'package:weather_app/src/utils/strings.dart';
+import 'package:weather_app/src/utils/styles/strings.dart';
 
 class Network {
 

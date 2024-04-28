@@ -5,6 +5,7 @@ import 'package:weather_app/src/core/initializer/initializer.dart';
 import 'package:weather_app/src/features/home/presentation/bloc/home_bloc.dart';
 import 'package:weather_app/src/features/home/presentation/home_page.dart';
 import 'src/core/dependencies/dependencies.dart';
+import 'src/core/routes/routes.dart';
 
 void main() {
   Initializer.init(() {
@@ -32,6 +33,8 @@ class MyApp extends StatelessWidget {
             useMaterial3: true,
           ),
           home: const HomePage(),
+          initialRoute: RouteGenerator.home,
+          onGenerateRoute: RouteGenerator.generateRoute,
         ));
       }
     );

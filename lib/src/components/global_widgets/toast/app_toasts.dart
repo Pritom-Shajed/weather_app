@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:weather_app/src/utils/colors.dart';
-import 'package:weather_app/src/utils/dimensions.dart';
+import 'package:weather_app/src/utils/styles/colors.dart';
+import 'package:weather_app/src/utils/styles/dimensions.dart';
 
 class AppToasts {
   AppToasts._();

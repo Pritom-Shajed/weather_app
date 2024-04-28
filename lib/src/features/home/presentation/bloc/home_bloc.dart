@@ -25,14 +25,14 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
       Position position = await sl<HomeController>().getInitialPosition();
       
-      var responseWeather = await homeUseCase.fetchWeatherByLatLon(lat: '${position.latitude}', lon: '${position.longitude}');
-      var responseWeatherForecast = await homeUseCase.fetchWeatherForecast(lat: '${position.latitude}', lon: '${position.longitude}');
+      var responseWeather = await homeUseCase.fetchWeatherByLatLon(lat: '${position.latitude}', lon: '${position.longitude}', units: event.isCelsius ? 'metric' : 'Imperial');
+      var responseWeatherForecast = await homeUseCase.fetchWeatherForecast(lat: '${position.latitude}', lon: '${position.longitude}', units: event.isCelsius ? 'metric' : 'Imperial');
 
       WeatherData weatherData = WeatherData.fromJson(responseWeather);
 
       WeatherForecastData weatherForecastData = WeatherForecastData.fromJson(responseWeatherForecast);
 
-      emit(HomeWeatherLoaded(weatherData: weatherData, weatherForecastData: weatherForecastData));
+      emit(HomeWeatherLoaded(weatherData: weatherData, weatherForecastData: weatherForecastData, isCelsius: event.isCelsius));
       
     } catch(e){
       log(e.toString());
@@ -46,14 +46,14 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     try {
       emit(HomeLoading());
 
-      var responseWeather = await homeUseCase.fetchWeatherByQuery(query: event.query);
-      var responseWeatherForecast = await homeUseCase.fetchWeatherForecastByQuery(query: event.query);
+      var responseWeather = await homeUseCase.fetchWeatherByQuery(query: event.query, units: event.isCelsius ? 'metric' : 'Imperial');
+      var responseWeatherForecast = await homeUseCase.fetchWeatherForecastByQuery(query: event.query,units: event.isCelsius ? 'metric' : 'Imperial');
 
       WeatherData weatherData = WeatherData.fromJson(responseWeather);
 
       WeatherForecastData weatherForecastData = WeatherForecastData.fromJson(responseWeatherForecast);
 
-      emit(HomeWeatherLoaded(weatherData: weatherData, weatherForecastData: weatherForecastData));
+      emit(HomeWeatherLoaded(weatherData: weatherData, weatherForecastData: weatherForecastData, isCelsius: event.isCelsius));
 
     } catch(e){
       log(e.toString());

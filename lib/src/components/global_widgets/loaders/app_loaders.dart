@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/src/components/global_widgets/icon/lottie_icon.dart';
-import 'package:weather_app/src/utils/icons.dart';
+import 'package:weather_app/src/utils/styles/icons.dart';
 
 class AppLoaders {
   AppLoaders._();

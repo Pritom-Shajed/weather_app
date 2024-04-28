@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/src/utils/colors.dart';
-import 'package:weather_app/src/utils/dimensions.dart';
+import 'package:weather_app/src/utils/styles/colors.dart';
+import 'package:weather_app/src/utils/styles/dimensions.dart';
 
 class AppTextField {
   AppTextField._();
@@ -23,12 +23,14 @@ class AppTextField {
         controller: searchTextController,
         focusNode: focusNode,
         onChanged: onChanged,
-        style: TextStyle(color: Colors.black, fontSize: Dimensions.fontSize14),
+        style: TextStyle(color: AppColors.whiteColor, fontSize: Dimensions.fontSize14),
         decoration: InputDecoration(
           filled: true,
-          fillColor: AppColors.whiteColor.withOpacity(0.2),
+          isDense: true,
+          prefixIcon: Icon(Icons.search, color: AppColors.whiteColor,),
+          fillColor: AppColors.whiteColor.withOpacity(0.1),
           hintText: hintText ?? 'Search',
-          hintStyle: TextStyle(color: Colors.black, fontSize: Dimensions.fontSize14),
+          hintStyle: TextStyle(color: AppColors.whiteColor, fontSize: Dimensions.fontSize14),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(Dimensions.radius100),
             borderSide: const BorderSide(color: Colors.transparent)

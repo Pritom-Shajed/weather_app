@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:weather_app/src/components/global_widgets/shimmer/app_shimmer.dart';
-import 'package:weather_app/src/utils/dimensions.dart';
+import 'package:weather_app/src/utils/styles/dimensions.dart';
 
 class NetworkIcon extends StatelessWidget {
   final String iconPath;
