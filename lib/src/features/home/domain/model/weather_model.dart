@@ -1,6 +1,7 @@
 class WeatherData {
   List<Weather>? weather;
   Main? main;
+  Wind? wind;
   Sys? sys;
   String? name;
 
@@ -14,8 +15,21 @@ class WeatherData {
       });
     }
     main = json['main'] != null ? Main.fromJson(json['main']) : null;
+    wind = json['wind'] !=null ? Wind.fromJson(json['wind']) : null;
     sys = json['sys'] != null ? Sys.fromJson(json['sys']) : null;
     name = json['name'];
+  }
+}
+
+class Wind {
+  dynamic speed;
+  dynamic degree;
+
+  Wind({this.speed, this.degree});
+
+  Wind.fromJson(Map<String, dynamic> json){
+    speed = json['speed'];
+    degree = json['degree'];
   }
 }
 

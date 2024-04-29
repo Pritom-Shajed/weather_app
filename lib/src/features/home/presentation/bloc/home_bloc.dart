@@ -3,9 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:weather_app/src/core/dependencies/dependencies.dart';
 import 'package:weather_app/src/features/home/controller/home_controller.dart';
-import 'package:weather_app/src/features/home/data/model/weather_forecast_model.dart';
-import 'package:weather_app/src/features/home/data/model/weather_model.dart';
 import 'package:weather_app/src/features/home/data/use_case/home_use_case.dart';
+import 'package:weather_app/src/features/home/domain/model/weather_forecast_model.dart';
+import 'package:weather_app/src/features/home/domain/model/weather_model.dart';
 
 part 'home_event.dart';
 part 'home_state.dart';

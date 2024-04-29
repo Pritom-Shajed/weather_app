@@ -8,9 +8,11 @@ import 'package:weather_app/src/components/global_widgets/icon/network_icon.dart
 import 'package:weather_app/src/core/environment/environment.dart';
 import 'package:weather_app/src/core/extensions/build_context_extension.dart';
 import 'package:weather_app/src/core/routes/routes.dart';
+import 'package:weather_app/src/features/home/domain/model/weather_forecast_model.dart';
 import 'package:weather_app/src/features/home/presentation/bloc/home_bloc.dart';
 import 'package:weather_app/src/features/home/widgets/home_widgets.dart';
 import 'package:weather_app/src/utils/const/debouncer/debouncer.dart';
+import 'package:weather_app/src/utils/styles/colors.dart';
 import 'package:weather_app/src/utils/styles/dimensions.dart';
 import 'package:weather_app/src/utils/styles/icons.dart';
 import 'package:weather_app/src/utils/styles/strings.dart';
@@ -63,7 +65,7 @@ class _HomePageState extends State<HomePage> {
             child: Column(
               children: [
                 32.verticalSpace,
-                //Search Bar
+                ///Search Bar
                 Align(
                   alignment: Alignment.topCenter,
                   child: AppTextField.hintTextOnly(
@@ -95,6 +97,7 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         12.verticalSpace,
 
+                        ///Temp Conversion and 5Day Weather Forecast
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -111,6 +114,8 @@ class _HomePageState extends State<HomePage> {
                         ),
 
                         24.verticalSpace,
+
+                        ///City Name
                         AppTexts.extraLargeText(
                             text: '${weatherInfo.name}',
                             fontWeight: FontWeight.bold),
@@ -125,6 +130,8 @@ class _HomePageState extends State<HomePage> {
                             AppTexts.smallText(text: 'Current Location'),
                           ],
                         ),
+
+                        ///Temp
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -132,10 +139,12 @@ class _HomePageState extends State<HomePage> {
                               iconPath:
                               '${Environment.iconBaseUrl}${weatherInfo.weather?[0].icon}@4x.png',
                             ),
-                            AppTexts.extraLargeText(
-                                text: '${weatherInfo.main?.temp.round()}°',
-                                fontSize: Dimensions.fontSize88,
-                                fontWeight: FontWeight.w500),
+                            Flexible(
+                              child: AppTexts.extraLargeText(
+                                  text: '${weatherInfo.main?.temp.round()}°',
+                                  fontSize: Dimensions.fontSize88,
+                                  fontWeight: FontWeight.w500),
+                            ),
                           ],
                         ),
                         AppTexts.largeText(
@@ -144,7 +153,7 @@ class _HomePageState extends State<HomePage> {
 
                         12.verticalSpace,
 
-                        // Forecast
+                        /// Forecast
                         SingleChildScrollView(
                             scrollDirection: Axis.horizontal,
                             physics: const BouncingScrollPhysics(),
@@ -162,13 +171,24 @@ class _HomePageState extends State<HomePage> {
 
                         64.verticalSpace,
 
-                        // Sunrise Sunset
+                        /// Sunrise Sunset
                         Padding(
                           padding: REdgeInsets.all(24),
-                          child: HomeWidgets.sunriseSunsetCard(
-                              sunriseTime: weatherInfo.sys!.sunrise!,
-                              sunsetTime: weatherInfo.sys!.sunset!),
-                        )
+                          child: Column(
+                            children: [
+                              HomeWidgets.sunriseSunsetCard(
+                                  sunriseTime: weatherInfo.sys!.sunrise!,
+                                  sunsetTime: weatherInfo.sys!.sunset!),
+                              16.verticalSpace,
+                              HomeWidgets.descriptionCard(context,
+                                  feelsLike: '${weatherInfo.main?.feelsLike}',
+                                  windSpeed: '${weatherInfo.wind?.speed}',
+                                  humidity: '${weatherInfo.main?.humidity}',
+                                  countryCode: '${weatherInfo.sys?.country}',
+                                  cityName: '${weatherInfo.name}')
+                            ],
+                          ),
+                        ),
                       ],
                     );
                   } else if (state is HomeError) {

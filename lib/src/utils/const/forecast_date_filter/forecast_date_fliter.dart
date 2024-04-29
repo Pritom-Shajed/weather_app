@@ -1,4 +1,4 @@
-import 'package:weather_app/src/features/home/data/model/weather_forecast_model.dart';
+import 'package:weather_app/src/features/home/domain/model/weather_forecast_model.dart';
 
 List<WeatherList> filterForecastDate ({required List<WeatherList> forecastData}){
   String extractDate(String value) {

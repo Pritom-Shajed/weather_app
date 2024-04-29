@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/src/components/global_widgets/text/app_texts.dart';
+import 'package:weather_app/src/utils/styles/colors.dart';
 
 class AppErrorWidget extends StatelessWidget {
   final String message;
@@ -15,6 +16,7 @@ class AppErrorWidget extends StatelessWidget {
       body: Center(
         child: AppTexts.smallText(
           text: message,
+          color: AppColors.baseColor
         ),
       ),
     );

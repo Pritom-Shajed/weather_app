@@ -29,6 +29,8 @@ abstract class Initializer {
 
       HttpOverrides.global = MyHttpOverrides();
 
+      await Future.delayed(const Duration(milliseconds: 150));
+
       runApp();
     }, (error, stack) {
       log('runZonedGuarded: ${error.toString()}');

@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:weather_app/src/components/global_widgets/icon/network_icon.dart';
 import 'package:weather_app/src/components/global_widgets/text/app_texts.dart';
 import 'package:weather_app/src/core/environment/environment.dart';
-import 'package:weather_app/src/features/home/data/model/weather_forecast_model.dart';
+import 'package:weather_app/src/features/home/domain/model/weather_forecast_model.dart';
 import 'package:weather_app/src/utils/styles/colors.dart';
 import 'package:weather_app/src/utils/styles/dimensions.dart';
 
@@ -53,7 +53,7 @@ class ForecastWidgets {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      AppTexts.mediumText(text: 'Humidity: ${weatherInfo.main?.humidity}'),
+                      AppTexts.mediumText(text: 'Humidity: ${weatherInfo.main?.humidity}%'),
                       AppTexts.mediumText(text: '${weatherInfo.weather?.first.description}'),
                     ],
                   )

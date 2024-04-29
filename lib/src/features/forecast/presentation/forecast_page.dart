@@ -5,7 +5,7 @@ import 'package:weather_app/src/components/global_widgets/button/app_button.dart
 import 'package:weather_app/src/components/global_widgets/global_widgets.dart';
 import 'package:weather_app/src/core/extensions/build_context_extension.dart';
 import 'package:weather_app/src/features/forecast/widgets/forecast_widgets.dart';
-import 'package:weather_app/src/features/home/data/model/weather_forecast_model.dart';
+import 'package:weather_app/src/features/home/domain/model/weather_forecast_model.dart';
 import 'package:weather_app/src/utils/const/forecast_date_filter/forecast_date_fliter.dart';
 import 'package:weather_app/src/utils/styles/icons.dart';
 
